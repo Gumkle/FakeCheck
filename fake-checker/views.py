@@ -180,11 +180,10 @@ class QuestionForExpertCreateView(IsRedactorMixin, View):
             title=request.POST.get('title'),
             content=request.POST.get('content'),
             sources=request.POST.get('sources'),
-            redactor=request.user
+            redactor=request.user.redactor
         )
         expert_question.save()
-        return redirect(self)
-
+        return redirect("fake-checker_QuestionForExpert_list")
 
 
 class QuestionForExpertDetailView(generic.DetailView):
@@ -193,8 +192,21 @@ class QuestionForExpertDetailView(generic.DetailView):
     template_name = 'fake-checker/question_for_expert_detail.html'
 
 
-class QuestionForExpertUpdateView(generic.UpdateView):
+class QuestionForExpertUpdateView(IsRedactorMixin,
+                                  IsRedactorQuestionsAuthorMixin,
+                                  IsNumberOfReviewsExceededMixin,
+                                  View):
+
+    def get(self, request):
+        return render(request, 'fake-checker/question_for_expert_form.html', {
+            'question_form': forms.QuestionForm,
+            'question_for_expert_form': forms.QuestionForExpertForm,
+        })
+
+    def post(self, request):
+        pass
+
     model = models.QuestionForExpert
     form_class = forms.QuestionForExpertForm
     pk_url_kwarg = "pk"
-    template_name = 'fake-checker/question_for_expert_form.html'
+    template_name =

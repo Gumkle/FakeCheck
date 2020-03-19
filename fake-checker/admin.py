@@ -19,12 +19,6 @@ class ExpertAdmin(admin.ModelAdmin):
         "about",
         "created",
     ]
-    readonly_fields = [
-        "last_updated",
-        "profile_pic",
-        "about",
-        "created",
-    ]
 
 
 class RedactorAdminForm(forms.ModelForm):
@@ -40,10 +34,6 @@ class RedactorAdmin(admin.ModelAdmin):
         "phone_number",
         "created",
     ]
-    readonly_fields = [
-        "phone_number",
-        "created",
-    ]
 
 
 class QuestionCollectionAdminForm(forms.ModelForm):
@@ -56,10 +46,6 @@ class QuestionCollectionAdminForm(forms.ModelForm):
 class QuestionCollectionAdmin(admin.ModelAdmin):
     form = QuestionCollectionAdminForm
     list_display = [
-        "name",
-        "created",
-    ]
-    readonly_fields = [
         "name",
         "created",
     ]
@@ -81,13 +67,6 @@ class ReviewAdmin(admin.ModelAdmin):
         "created",
         "sources",
     ]
-    readonly_fields = [
-        "last_updated",
-        "justification",
-        "is_info_fake",
-        "created",
-        "sources",
-    ]
 
 
 class CategoryAdminForm(forms.ModelForm):
@@ -100,9 +79,6 @@ class CategoryAdminForm(forms.ModelForm):
 class CategoryAdmin(admin.ModelAdmin):
     form = CategoryAdminForm
     list_display = [
-        "name",
-    ]
-    readonly_fields = [
         "name",
     ]
 
@@ -121,11 +97,6 @@ class QuestionAdmin(admin.ModelAdmin):
         "created",
         "sources",
     ]
-    readonly_fields = [
-        "content",
-        "created",
-        "sources",
-    ]
 
 
 class QuestionFromUserAdminForm(forms.ModelForm):
@@ -140,9 +111,6 @@ class QuestionFromUserAdmin(admin.ModelAdmin):
     list_display = [
         "is_read",
     ]
-    readonly_fields = [
-        "is_read",
-    ]
 
 
 class QuestionForExpertAdminForm(forms.ModelForm):
@@ -155,8 +123,7 @@ class QuestionForExpertAdminForm(forms.ModelForm):
 class QuestionForExpertAdmin(admin.ModelAdmin):
     form = QuestionForExpertAdminForm
     list_display = [
-    ]
-    readonly_fields = [
+        'title'
     ]
 
 

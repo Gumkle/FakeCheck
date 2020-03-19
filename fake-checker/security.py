@@ -1,4 +1,6 @@
 from django.contrib.auth.mixins import AccessMixin
+
+from FakeChecker.settings import MIN_REVIEWS_FOR_PUBLIC_QUESTION
 from .models import Redactor, Expert
 
 
@@ -26,3 +28,20 @@ class IsExpertMixin(RoleCheckMixin):
         except Expert.DoesNotExist:
             return self.handle_no_permission()
         return super().dispatch(request, *args, **kwargs)
+
+
+class IsRedactorQuestionsAuthorMixin(AccessMixin):
+    def dispatch(self, request, *args, **kwargs):
+        no_permission = True
+        try:
+            redactor = request.user.redactor
+            request.
+        except Redactor.DoesNotExist:
+            pass
+        if no_permission:
+            return self.handle_no_permission()
+
+
+class IsNumberOfReviewsExceededMixin(AccessMixin):
+    def dispatch(self, request, *args, **kwargs):
+        pass
