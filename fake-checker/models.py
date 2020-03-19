@@ -5,7 +5,7 @@ from django.urls import reverse
 class Expert(models.Model):
 
     # Relationships
-    user = models.OneToOneField("auth.User", on_delete=models.CASCADE)
+    user = models.OneToOneField("auth.User", on_delete=models.CASCADE, related_name="expert")
     categories = models.ManyToManyField("fake-checker.Category")
 
     # Fields
@@ -30,7 +30,7 @@ class Expert(models.Model):
 class Redactor(models.Model):
 
     # Relationships
-    user = models.OneToOneField("auth.User", on_delete=models.CASCADE)
+    user = models.OneToOneField("auth.User", on_delete=models.CASCADE, related_name="redactor")
 
     # Fields
     phone_number = models.TextField(max_length=12)
@@ -121,7 +121,7 @@ class Question(models.Model):
     categories = models.ManyToManyField("fake-checker.Category", related_name="questions")
 
     # Fields
-    title = models.TextField(max_length=180)
+    title = models.CharField(max_length=180)
     content = models.TextField(max_length=1000)
     created = models.DateTimeField(auto_now_add=True, editable=False)
     sources = models.TextField()
@@ -173,3 +173,4 @@ class QuestionForExpert(Question):
 
     def get_update_url(self):
         return reverse("fake-checker_QuestionForExpert_update", args=(self.pk,))
+

@@ -1,4 +1,7 @@
-from django.views import generic
+from django.shortcuts import render, redirect
+
+from .security import IsRedactorMixin
+from django.views import generic, View
 from . import models
 from . import forms
 
@@ -164,10 +167,24 @@ class QuestionForExpertListView(generic.ListView):
     template_name = 'fake-checker/question_for_expert_list.html'
 
 
-class QuestionForExpertCreateView(generic.CreateView):
-    model = models.QuestionForExpert
-    form_class = forms.QuestionForExpertForm
-    template_name = 'fake-checker/question_for_expert_form.html'
+class QuestionForExpertCreateView(IsRedactorMixin, View):
+
+    def get(self, request):
+        return render(request, 'fake-checker/question_for_expert_form.html', {
+            'question_form': forms.QuestionForm,
+            'question_for_expert_form': forms.QuestionForExpertForm,
+        })
+
+    def post(self, request):
+        expert_question = models.QuestionForExpert(
+            title=request.POST.get('title'),
+            content=request.POST.get('content'),
+            sources=request.POST.get('sources'),
+            redactor=request.user
+        )
+        expert_question.save()
+        return redirect(self)
+
 
 
 class QuestionForExpertDetailView(generic.DetailView):

@@ -54,6 +54,7 @@ class CategoryForm(forms.ModelForm):
 class QuestionForm(forms.ModelForm):
     class Meta:
         model = models.Question
+
         fields = [
             "title",
             "content",

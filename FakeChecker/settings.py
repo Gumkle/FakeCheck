@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'fake-checker',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,4 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static/dist'),
 )
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
