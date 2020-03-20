@@ -2,17 +2,20 @@
 {% load static %}
 {% load crispy_forms_filters %}
 {% block content %}
-    
+
 <p>
     <a class="btn btn-light" href="{% url 'fake-checker_QuestionForExpert_list' %}">
     QuestionForExpert Listing
     </a>
 </p>
-    
+
 <form method="post">
     {% csrf_token %}
-    {{ question_form|crispy }}
-    <input type="submit" value="Save" class="btn btn-primary">
+    <div class="container">
+        <h3>Nowe pytanie do eksperta</h3>
+        {{ question_for_expert_form|crispy }}
+        <input type="submit" value="Save" class="btn btn-primary">
+    </div>
 </form>
 
 {% endblock %}

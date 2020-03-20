@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
-from .security import IsRedactorMixin
+from .security import IsRedactorMixin, IsRedactorQuestionsAuthorMixin, IsNumberOfReviewsExceededMixin
 from django.views import generic, View
 from . import models
 from . import forms
@@ -171,7 +171,6 @@ class QuestionForExpertCreateView(IsRedactorMixin, View):
 
     def get(self, request):
         return render(request, 'fake-checker/question_for_expert_form.html', {
-            'question_form': forms.QuestionForm,
             'question_for_expert_form': forms.QuestionForExpertForm,
         })
 
@@ -180,9 +179,10 @@ class QuestionForExpertCreateView(IsRedactorMixin, View):
             title=request.POST.get('title'),
             content=request.POST.get('content'),
             sources=request.POST.get('sources'),
-            redactor=request.user.redactor
+            redactor=request.user.redactor,
         )
         expert_question.save()
+        expert_question.categories.set(request.POST.getlist('categories'))
         return redirect("fake-checker_QuestionForExpert_list")
 
 
@@ -197,16 +197,17 @@ class QuestionForExpertUpdateView(IsRedactorMixin,
                                   IsNumberOfReviewsExceededMixin,
                                   View):
 
-    def get(self, request):
+    def get(self, request, **kwargs):
+        object = get_object_or_404(models.QuestionForExpert, pk=kwargs['pk'])
+        print(object.categories.all())
         return render(request, 'fake-checker/question_for_expert_form.html', {
-            'question_form': forms.QuestionForm,
-            'question_for_expert_form': forms.QuestionForExpertForm,
+            'question_for_expert_form': forms.QuestionForExpertForm(initial={
+                'title': object.title,
+                'content': object.content,
+                'sources': object.sources,
+                'categories': object.categories.all(),
+            }),
         })
 
     def post(self, request):
         pass
-
-    model = models.QuestionForExpert
-    form_class = forms.QuestionForExpertForm
-    pk_url_kwarg = "pk"
-    template_name =

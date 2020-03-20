@@ -74,7 +74,7 @@ class QuestionCollection(models.Model):
 class Review(models.Model):
 
     # Relationships
-    question_for_expert = models.ForeignKey("fake-checker.QuestionForExpert", on_delete=models.CASCADE)
+    question_for_expert = models.ForeignKey("fake-checker.QuestionForExpert", on_delete=models.CASCADE, related_name="reviews")
     expert = models.ForeignKey("fake-checker.Expert", on_delete=models.CASCADE)
 
     # Fields

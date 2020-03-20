@@ -1,7 +1,9 @@
 from django.contrib.auth.mixins import AccessMixin
+from django.shortcuts import get_object_or_404
 
+from FakeChecker import settings
 from FakeChecker.settings import MIN_REVIEWS_FOR_PUBLIC_QUESTION
-from .models import Redactor, Expert
+from .models import Redactor, Expert, QuestionForExpert
 
 
 class PermissionMessages:
@@ -31,17 +33,27 @@ class IsExpertMixin(RoleCheckMixin):
 
 
 class IsRedactorQuestionsAuthorMixin(AccessMixin):
+    permission_denied_message = "Nie jesteś autorem tego pytania, więc nie możesz go zmienić!"
+
     def dispatch(self, request, *args, **kwargs):
         no_permission = True
+        question = get_object_or_404(QuestionForExpert, pk=kwargs['pk'])
+        question_redactor = question.redactor
         try:
-            redactor = request.user.redactor
-            request.
+            currently_logged_redactor = request.user.redactor
+            no_permission = currently_logged_redactor is question_redactor
         except Redactor.DoesNotExist:
             pass
         if no_permission:
             return self.handle_no_permission()
+        return super().dispatch(request, *args, **kwargs)
 
 
 class IsNumberOfReviewsExceededMixin(AccessMixin):
+    permission_denied_message = "Nie możesz zmienić tego pytania ponieważ liczba recenzji które otrzymało jest zbyt duża!"
+
     def dispatch(self, request, *args, **kwargs):
-        pass
+        question = get_object_or_404(QuestionForExpert, pk=kwargs['pk'])
+        if question.reviews.count() >= MIN_REVIEWS_FOR_PUBLIC_QUESTION:
+            return self.handle_no_permission()
+        return super().dispatch(request, *args, **kwargs)

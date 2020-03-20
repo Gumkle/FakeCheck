@@ -1,4 +1,6 @@
 from django import forms
+from django.forms import CharField, TextInput, Textarea
+
 from . import models
 
 
@@ -75,5 +77,17 @@ class QuestionForExpertForm(forms.ModelForm):
     class Meta:
         model = models.QuestionForExpert
         fields = [
-            "redactor",
+            "title",
+            "content",
+            "sources",
+            "categories",
         ]
+        labels = {
+            'title': "Tytuł",
+            'content': "Treść",
+            'sources': "Źródła",
+            'categories': "Kategorie",
+        }
+        widgets = {
+            'sources': Textarea(attrs={'rows': 4, 'style': 'resize:none;'})
+        }
