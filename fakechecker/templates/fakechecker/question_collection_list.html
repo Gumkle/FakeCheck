@@ -1,8 +1,28 @@
 
 {% extends "base.html" %}
 {% block content %}
-{% for object in object_list %}
-  <div class="m-2"><a href="{{object.get_absolute_url}}">{{object}}</a></div>
-{% endfor %}
-<div><a class="btn btn-outline-dark" href="{% url 'QuestionCollection_create' %}">Create a new QuestionCollection</a></div>
+  <h2 class="text-center"><strong>Twoje kolekcje pytań:</strong></h2>
+  <div class="card row m-2 mt-4">
+    <div class="p-1">
+    {% for object in object_list %}
+        <div class="border hover-dark p-3 m-1 row">
+            <div class="col-12 col-md-10">
+                <a href="{{object.get_absolute_url}}" class="no-decoration">
+                    <p class="h5 text-muted">{{object.name}}</p>
+                </a>
+
+                <span class="text-muted">{{ object.created|date }}</span>
+                
+                
+            </div>
+        </div>
+    {% empty %}
+        <div class="border p-3 m-1 row">
+            <h3 class="col-12 text-center">Nie Posiadasz kolekcji pytań</h3>
+        </div>
+    {% endfor %}
+  </div>
 {% endblock %}
+{% block footer%}
+<script src="/static/question_from_user_list.js"></script>
+{%endblock%}

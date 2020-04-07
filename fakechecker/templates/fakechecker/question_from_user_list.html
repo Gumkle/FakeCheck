@@ -56,12 +56,13 @@
                 {% endif %}
 
                 <span class="text-muted">{{ object.created|date }}</span>
-                <div>Kolekcja pytań:
-                <select class="selectpicker q-collection" multiple data-live-search="true">
-                    {% for question_collection in question_collections%}
-                        <option {% if object in question_collection.questions_from_user.all%}selected=""{%endif%}data-id="{{question_collection.id}}" data-questionid="{{object.id}}">{{question_collection.name}}</option>
-                    {%endfor%}
-                </select>
+
+                <div>
+                  <select class="selectpicker q-collection" multiple data-live-search="true" title="Kolekcje pytań">
+                      {% for question_collection in question_collections%}
+                          <option {% if object in question_collection.questions_from_user.all%}selected=""{%endif%}data-id="{{question_collection.id}}" data-questionid="{{object.id}}">{{question_collection.name}}</option>
+                      {%endfor%}
+                  </select>
                 <button data-questionid="{{object.id}}" class = "btn btn-outline-dark new-collection">Nowa Kolekcja</button>
                 </div>
                 
@@ -75,5 +76,4 @@
     </div>
 {% endblock %}
 {% block footer%}
-<script src="/static/question_from_user_list.js"></script>
 {%endblock%}

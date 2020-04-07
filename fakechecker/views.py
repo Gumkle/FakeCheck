@@ -1,6 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
-from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Count
 from django.urls import reverse
 from django.views import generic, View
@@ -8,20 +7,18 @@ from . import models
 from . import forms
 from django.shortcuts import render, redirect, get_object_or_404
 from .security import IsRedactorMixin, IsRedactorQuestionsAuthorMixin, IsNumberOfReviewsExceededMixin, \
-    HasExpertAddedReviewMixin, IsExpertMixin
+    HasExpertAddedReviewMixin, IsExpertMixin,IsExpertAuthorOfReviewMixin
 from django.contrib.auth import views as auth_views
 
 
 class ExpertListView(LoginRequiredMixin, generic.ListView):
     model = models.Expert
-    form_class = forms.ExpertForm
     login_url = '/login'
     redirect_field_name = 'redirect_to'
 
 
 class ExpertDetailView(LoginRequiredMixin, generic.DetailView):
     model = models.Expert
-    form_class = forms.ExpertForm
     login_url = '/login'
     redirect_field_name = 'redirect_to'
 
@@ -61,14 +58,12 @@ class ExpertDetailView(LoginRequiredMixin, generic.DetailView):
 
 class RedactorListView(LoginRequiredMixin, generic.ListView):
     model = models.Redactor
-    form_class = forms.RedactorForm
     login_url = '/login'
     redirect_field_name = 'redirect_to'
 
 
 class RedactorDetailView(LoginRequiredMixin, generic.DetailView):
     model = models.Redactor
-    form_class = forms.RedactorForm
     login_url = '/login'
     redirect_field_name = 'redirect_to'
 
@@ -81,7 +76,6 @@ class RedactorDetailView(LoginRequiredMixin, generic.DetailView):
             'Od najnowszego', 'Od najstarszego', 'Najpopularniejsze', 'Najmniej popularne', 'Najbardziej oceniane',
             'Najmniej oceniane')
         context['categories'] = models.Category.objects.all()
-        context['question_collections'] = models.QuestionCollection.objects.filter(redactor=self.request.user.redactor)
 
         new_context = models.QuestionForExpert.objects.filter(redactor=self.kwargs['pk'])
         if context['prev_category'] != '':
@@ -104,7 +98,7 @@ class RedactorDetailView(LoginRequiredMixin, generic.DetailView):
         return context
 
 
-class ReviewCreateView(IsExpertMixin, HasExpertAddedReviewMixin, generic.CreateView):
+class ReviewCreateView(LoginRequiredMixin,IsExpertMixin, HasExpertAddedReviewMixin, generic.CreateView):
     model = models.Review
     form_class = forms.ReviewForm
     template_name = 'fakechecker/review_create.html'
@@ -130,18 +124,25 @@ class ReviewCreateView(IsExpertMixin, HasExpertAddedReviewMixin, generic.CreateV
         return super().form_invalid(form)
 
 
-class ReviewUpdateView(generic.UpdateView):
+class ReviewUpdateView(LoginRequiredMixin,
+                       IsExpertMixin,
+                       IsExpertAuthorOfReviewMixin,
+                       generic.UpdateView):
     model = models.Review
     form_class = forms.ReviewForm
     pk_url_kwarg = "pk"
 
 
-class CategoryListView(IsRedactorMixin, generic.ListView):
+class CategoryListView(LoginRequiredMixin,
+                       IsRedactorMixin,
+                       generic.ListView):
     model = models.Category
     form_class = forms.CategoryForm
 
 
-class CategoryCreateView(IsRedactorMixin, generic.CreateView):
+class CategoryCreateView(LoginRequiredMixin,
+                         IsRedactorMixin,
+                         generic.CreateView):
     model = models.Category
     form_class = forms.CategoryForm
 
@@ -170,13 +171,17 @@ class CategoryDetailView(generic.DetailView):
         return context
 
 
-class CategoryUpdateView(IsRedactorMixin, generic.UpdateView):
+class CategoryUpdateView(LoginRequiredMixin,
+                         IsRedactorMixin,
+                         generic.UpdateView):
     model = models.Category
     form_class = forms.CategoryForm
     pk_url_kwarg = "pk"
 
 
-class QuestionFromUserListView(IsRedactorMixin, generic.ListView):
+class QuestionFromUserListView(LoginRequiredMixin,
+                               IsRedactorMixin,
+                               generic.ListView):
     model = models.QuestionFromUser
     form_class = forms.QuestionFromUserForm
     template_name = 'fakechecker/question_from_user_list.html'
@@ -342,6 +347,7 @@ class QuestionForExpertUpdateView(LoginRequiredMixin,
 
 class LoginView(auth_views.LoginView):
     template_name = "fakechecker/login.html"
+    form_class = forms.CustomAuthenticationForm
 
 
 class LogoutView(auth_views.LogoutView):
@@ -351,7 +357,7 @@ class LogoutView(auth_views.LogoutView):
         next_page = super(LogoutView, self).get_next_page()
         messages.add_message(
             self.request, messages.SUCCESS,
-            'You successfully log out!'
+            'Zostałeś wylogowany pomyślnie!'
         )
         return next_page
 

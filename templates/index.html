@@ -6,91 +6,98 @@
             <h1 class="text-center m-4"><span class="logo-icon">F</span>ake <span class="logo-icon">C</span>heck</h1>
         </div>
         <div class="col-12 col-sm-10 col-lg-4 offset-0 offset-sm-1 offset-lg-2 mt-1 order-2 order-lg-0">
-            <p class="h6">
+            <p class="h6 mt-2">
                 Największą zmorą dzisiejszego użytkownika internetu są fake newsy. <br><br>
                 W dobie wszechobecnego dostępu do internetu, każdy człowiek jest w stanie publikować, co mu się żywnie zachce. Jednak bardzo łatwo jest trafić na informacje niesprawdzone, wyssane z palca.
             </p>
-            <p class="h4">
+            <p class="h2 mt-0 mt-xl-5">
                 Właśnie po to jest <span class="logo-icon">F</span>ake <span class="logo-icon">C</span>heck! <br>
             </p>
-            <p class="h6">
+            <p class="h6 mt-0 mt-xl-5">
                 Jest to platforma pozwalająca na zadawanie pytań do specjalistów w swoich dziedzinach, którzy nie dosyć, że odpowiedzą na twoje pytanie, czy dana rzecz jest prawdą czy fałszem, to jeszcze udostępnią ci materiały źródłowe!
             </p>
             <p class="h5">A więc drogi użytkowniku, śmiało! Zacznij weryfikować informacje!</p>
             <p class="h6">A jeżeli jesteś ekspertem w jakiejś dziedzinie, <a href="{% url 'Expert_how_to_be' %}">skontaktuj się z nami!</a></p>
         </div>
-        <div class="col-12 col-sm-10 col-lg-4  offset-0 offset-sm-1 offset-lg-0 order-1 order-lg-0 mb-4">
-            <img src="{% static 'img/fake.jpg' %}" alt="" class="img-fluid">
+        <div class="col-12 col-sm-10 col-lg-4  offset-0 offset-sm-1 offset-lg-0 order-1 order-lg-0 mb-4 d-none d-sm-block d-lg-none d-xl-block" >
+            <img src="{% static 'img/fake_news.jpg' %}" alt="" class="img-fluid" >
+        </div>
+        <div class="col-12 col-sm-10 col-lg-4  offset-0 offset-sm-1 offset-lg-0 order-1 order-lg-0 mb-4 d-block d-sm-none d-lg-block d-xl-none" >
+            <img src="{% static 'img/fake.jpg' %}" alt="" class="img-fluid" >
         </div>
     </div>
-    <div class="container" id="question_table">
-    <div class="card row m-2 mt-4">
-        <p class="text-muted pt-2 pl-3 h5">Sortowanie i filtry:</p>
-        <form method="get" action="{% url 'index' %}#question_table" class="input-group">
-            <div class="col-12 col-sm-3 mb-3">
-                <select name="order" class="custom-select">
-                    {%  for order in orders %}
-                        <option value="{{ order }}"  {% if order == prev_order %}selected{% endif %}>{{ order }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="col-12 col-sm-3 mb-3">
-                <select name="category" class="custom-select">
-                    <option value="" selected>Brak kategorii...</option>
-                    {%  for category in categories %}
-                        <option value="{{ category.name }}" {% if category.name == prev_category %}selected{% endif %}>{{ category.name }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="col-12 col-sm-3 mb-3">
-                <input type="text" name="title" class="form-control" placeholder="Tytuł..." value="{{ title }}">
-            </div>
-            <div class="col-12 col-sm-3">
-                <button class="btn btn-outline-dark w-100">Szukaj</button>
-            </div>
-        </form>
-    </div>
-    <div class="p-1">
-    {% for object in object_list %}
-        <div class="border hover-dark p-3 m-1 row">
-            <div class="col-12 col-md-8">
-                <a href="{{object.get_absolute_url}}" class="no-decoration">
-                    <p class="h5 text-muted">{{object.title}}</p>
-                </a>
-                {% for category in object.categories.all %}
-                    <a href="{{ category.get_absolute_url }}" class="badge badge-dark p-1 mr-1">
-                        {% if category.fa_icon_class %}
-                            <i class="{{ category.fa_icon_class }}"></i>
-                        {% endif %}
-                        {{ category }}
-                    </a>
-                {% endfor %}
-                <span class="text-muted">{{ object.created|date }}</span>
-            {% if user.expert %}
-                <a class="text-muted" href="{{ object.redactor.get_absolute_url }}">Redaktor: {{ object.redactor.user.first_name }} {{ object.redactor.user.last_name }}</a>
-            {% endif %}
-            </div>
-            <div class="col-12 col-md-4 mt-md-0 mt-3">
-                <div class="row text-center">
-                    <div class="col-2 mt-1">
-                        <i class="fas fa-thumbs-down" ></i>
+    <div class="container-fluid" id="question_table">
+    <div class="row">
+        <div class="col-12 col-sm-10 col-lg-8 offset-0 offset-sm-1 offset-lg-2 mb-5">
+            <div class="card row  mt-4">
+                <p class="text-muted pt-2 pl-3 h5">Sortowanie i filtry:</p>
+                <form method="get" action="{% url 'index' %}#question_table" class="input-group">
+                    <div class="col-12 col-md-3 mb-3">
+                        <select name="order" class="custom-select">
+                            {%  for order in orders %}
+                                <option value="{{ order }}"  {% if order == prev_order %}selected{% endif %}>{{ order }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
-                    <div class="progress {% if object.review_set.count > 0 %}bg-success{% endif %} p-0 col-8 mt-1">
-                        <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="{{ object.get_fake_percentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ object.get_fake_percentage }}%"></div>
+                    <div class="col-12 col-md-3 mb-3">
+                        <select name="category" class="custom-select">
+                            <option value="" selected>Brak kategorii...</option>
+                            {%  for category in categories %}
+                                <option value="{{ category.name }}" {% if category.name == prev_category %}selected{% endif %}>{{ category.name }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
-                    <div class="col-2 mb-1">
-                        <i class="fas fa-thumbs-up"></i>
+                    <div class="col-12 col-md-3 mb-3">
+                        <input type="text" name="title" class="form-control" placeholder="Tytuł..." value="{{ title }}">
                     </div>
+                    <div class="col-12 col-md-3">
+                        <button class="btn btn-outline-dark w-100">Szukaj</button>
+                    </div>
+                </form>
+            </div>
+            <div class="mt-2">
+            {% for object in object_list %}
+                <div class="border hover-dark p-3 row">
+                    <div class="col-12 col-md-8">
+                        <a href="{{object.get_absolute_url}}" class="no-decoration">
+                            <p class="h5 text-muted">{{object.title}}</p>
+                        </a>
+                        {% for category in object.categories.all %}
+                            <a href="{{ category.get_absolute_url }}" class="badge badge-dark p-1 mr-1">
+                                {% if category.fa_icon_class %}
+                                    <i class="{{ category.fa_icon_class }}"></i>
+                                {% endif %}
+                                {{ category }}
+                            </a>
+                        {% endfor %}
+                        <span class="text-muted">{{ object.created|date }}</span>
+                    {% if user.expert %}
+                        <a class="text-muted" href="{{ object.redactor.get_absolute_url }}">Redaktor: {{ object.redactor.user.first_name }} {{ object.redactor.user.last_name }}</a>
+                    {% endif %}
+                    </div>
+                    <div class="col-12 col-md-4 mt-md-0 mt-3">
+                        <div class="row text-center">
+                            <div class="col-2 mt-1">
+                                <i class="fas fa-thumbs-down" ></i>
+                            </div>
+                            <div class="progress {% if object.review_set.count > 0 %}bg-success{% endif %} p-0 col-8 mt-1">
+                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="{{ object.get_fake_percentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ object.get_fake_percentage }}%"></div>
+                            </div>
+                            <div class="col-2 mb-1">
+                                <i class="fas fa-thumbs-up"></i>
+                            </div>
 
+                        </div>
+                        <p class="text-muted text-center mt-2 m-0">Opini: {{ object.review_set.all.count }} ({{ object.get_real_percentage }}%)</p>
+                    </div>
                 </div>
-                <p class="text-muted text-center mt-2 m-0">Opini: {{ object.review_set.all.count }} ({{ object.get_real_percentage }}%)</p>
+            {% empty %}
+                <div class="border p-3 m-1 row">
+                    <h3 class="col-12 text-center">Brak pytań spełniających kryteria...</h3>
+                </div>
+            {% endfor %}
             </div>
         </div>
-    {% empty %}
-        <div class="border p-3 m-1 row">
-            <h3 class="col-12 text-center">Brak pytań spełniających kryteria...</h3>
-        </div>
-    {% endfor %}
     </div>
 </div>
 {% endblock %}

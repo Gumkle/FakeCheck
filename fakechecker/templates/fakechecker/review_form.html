@@ -2,43 +2,43 @@
 {% load static %}
 {% block content %}
 {% load crispy_forms_tags %}
-<div class="card p-2 p-md-4 mt-4 mb-4 js-question-details">
-    <h1 class="text-center mt-4 mt-md-0">{{ object.question_for_expert.title }}</h1>
-    <p class="text-muted text-center">{{ object.question_for_expert.created|date }}</p>
-    <div class=" text-muted mt-4">
-        <p>{{ object.question_for_expert.content }}</p>
-        {% if object.question_for_expert.list_of_sources %}
-            <h4>Źródła:</h4>
-            <ul>
-                {% for source in object.question_for_expert.list_of_sources %}
-                <li><a href="{{ source }}">{{ source }}</a></li>
-                {% endfor %}
-            </ul>
-        {% endif %}
 
-    </div>
-    <div class="row p-4">
-        {% for category in object.question_for_expert.categories.all %}
-            <a href="{{ category.get_absolute_url }}" class="badge badge-dark p-2 m-1">
-                {% if category.fa_icon_class %}
-                    <i class="{{ category.fa_icon_class }}"></i>
-                {% endif %}
-                {{ category }}
-            </a>
-        {% endfor %}
+<div class="container">
+    <div class="card p-2 p-md-4 mt-4 mb-4 js-question-details">
+        <h1 class="text-center mt-4 mt-md-0">{{ object.question_for_expert.title }}</h1>
+        <p class="text-muted text-center">{{ object.question_for_expert.created|date }}</p>
+        <div class=" text-muted mt-4">
+            <p>{{ object.question_for_expert.content }}</p>
+            {% if object.question_for_expert.list_of_sources %}
+                <h4>Źródła:</h4>
+                <ul>
+                    {% for source in object.question_for_expert.list_of_sources %}
+                    <li><a href="{{ source }}">{{ source }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+        </div>
+        <div class="row p-4">
+            {% for category in object.question_for_expert.categories.all %}
+                <a href="{{ category.get_absolute_url }}" class="badge badge-dark p-2 m-1">
+                    {% if category.fa_icon_class %}
+                        <i class="{{ category.fa_icon_class }}"></i>
+                    {% endif %}
+                    {{ category }}
+                </a>
+            {% endfor %}
+        </div>
     </div>
 </div>
-<h1 class="text-center">Twoja opinia:</h1>
-<form method="post" class="review-form">
-{%  csrf_token %}
-  {{ form|crispy}}
-    <strong>*Pola wymagane.</strong>
-  <br>
-  W źródłach powinny się znajdować tylko linki.
-  <br>
-  Linki oddzielaj ",", na przykład "https://fake-check.akai.org.pl/, https://www.hackcrisis.com/".
-  <br>
-  <input type="submit" value="Zaakceptuj" class="btn btn-outline-dark w-100 mt-2">
-</form>
+<div class="container">
+    <h1 class="text-center">Twoja opinia:</h1>
+    <form method="post" class="review-form">
+    {%  csrf_token %}
+      {{ form|crispy}}
+        <strong>*Pola wymagane.</strong>
+      <input type="submit" value="Zaakceptuj" class="btn btn-outline-dark w-100 mt-2">
+    </form>
+</div>
 
 {% endblock %}
