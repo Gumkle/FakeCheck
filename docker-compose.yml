@@ -1,0 +1,31 @@
+version: '2.0'
+services:
+  web:
+    build: .
+    ports:
+    - "8000:8000"
+    volumes:
+    - .:/app
+    links:
+    - redis
+    - db
+  redis:
+    image: redis
+    networks:
+    - backend
+  db:
+    image: mysql
+    networks:
+    - backend
+    environment:
+    - MYSQL_ROOT_PASSWORD=password
+    - MYSQL_DATABASE=fakecheker
+  frontend:
+    build:
+        dockerfile: Dockerfile_frontend
+        context: .
+
+networks:
+    backend:
+        driver: bridge
+
