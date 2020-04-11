@@ -79,3 +79,11 @@ class HasExpertAddedReviewMixin(AccessMixin):
         if Review.objects.filter(expert=self.request.user.expert, question_for_expert=self.question_for_expert).first():
             return redirect(self.question_for_expert.get_absolute_url())
         return super().dispatch(request, *args, **kwargs)
+
+class IsExpertAuthorOfReviewMixin(AccessMixin):
+    def dispatch(self, request, *args, **kwargs):
+        expert = request.user.expert
+        review = get_object_or_404(Review,id=kwargs['pk'])
+        if not review.expert.id is expert.id:
+            return self.handle_no_permission()
+        return super().dispatch(request, *args, **kwargs)

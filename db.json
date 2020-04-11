@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$180000$d6pX8DGQxbG7$Cqub9syt3VVEGQYMHEJnzUG/rqbv2dpT3nBIBPN4NtE=",
-        "last_login": "2020-03-21T10:10:18Z",
+        "last_login": "2020-03-21T22:55:01.023Z",
         "is_superuser": true,
         "username": "michalsz",
         "first_name": "Micha\u0142",
@@ -22,7 +22,7 @@
     "pk": 2,
     "fields": {
         "password": "pbkdf2_sha256$180000$OVPxXmlcxcZt$SlxLKJJh8gE2NmXHxSPsQ8OJsC7sl1VUAxrKLWS0xkg=",
-        "last_login": "2020-03-21T09:19:25.611Z",
+        "last_login": "2020-03-21T21:30:09.599Z",
         "is_superuser": false,
         "username": "lekarz1",
         "first_name": "Adam",
@@ -76,7 +76,7 @@
     "pk": 5,
     "fields": {
         "password": "pbkdf2_sha256$180000$GzNL3WzEY6w7$WDBmG6qriCmVv1z27qfWKPem40yKKk2xUGYdaKZUFM8=",
-        "last_login": "2020-03-21T09:18:49.689Z",
+        "last_login": "2020-03-21T18:01:39.436Z",
         "is_superuser": false,
         "username": "redaktor1",
         "first_name": "Tomasz",
@@ -127,10 +127,18 @@
 },
 {
     "model": "sessions.session",
-    "pk": "wu91qg3447mubmudmuojw3qyppopem33",
+    "pk": "v9scqbxstcic9l8sgquu2vclj8ytodtu",
     "fields": {
         "session_data": "MWQ1MDRjYmFhMGIyMDg4OTRmMWViMTE4OThmYWQ0ODUzOGQ4YWMwYzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIxOGM1NjA0YjY2MzZiNWE0ZmRkZGEzZWRhNmFjYzNhYThjODI2ZDA2In0=",
-        "expire_date": "2020-04-04T10:10:18.158Z"
+        "expire_date": "2020-04-04T22:55:01.030Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "wcwuheql45vc159veaurm3kv1gyayk4v",
+    "fields": {
+        "session_data": "MWQ1MDRjYmFhMGIyMDg4OTRmMWViMTE4OThmYWQ0ODUzOGQ4YWMwYzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIxOGM1NjA0YjY2MzZiNWE0ZmRkZGEzZWRhNmFjYzNhYThjODI2ZDA2In0=",
+        "expire_date": "2020-04-04T14:18:11.362Z"
     }
 },
 {
@@ -140,14 +148,14 @@
         "user": [
             "lekarz1"
         ],
-        "last_updated": "2020-03-20T09:38:56.759Z",
-        "profile_pic": "https://i.picsum.photos/id/329/200/200.jpg",
-        "about": "Lubie Szpitale, Objawy i Powik\u0142ania",
+        "last_updated": "2020-03-21T23:13:14.814Z",
+        "profile_pic": "https://img.icons8.com/windows/32/000000/stethoscope.png",
+        "about": "Lekarz rodzinny z wieloletnim do\u015bwiadczeniem",
         "created": "2020-03-20T09:38:56.759Z",
         "categories": [
-            "Objawy",
-            "Powik\u0142ania",
-            "Szpital"
+            "Choroby serca",
+            "Profilaktyka",
+            "Zaka\u017cenia"
         ]
     }
 },
@@ -158,13 +166,14 @@
         "user": [
             "lekarz2"
         ],
-        "last_updated": "2020-03-20T09:39:56.721Z",
-        "profile_pic": "https://i.picsum.photos/id/35/200/200.jpg",
-        "about": "Lubie p\u0142yn do Dezyfekcji i roznoszenie",
+        "last_updated": "2020-03-21T23:14:26.578Z",
+        "profile_pic": "https://img.icons8.com/windows/32/000000/medical-doctor.png",
+        "about": "Lekarz specjalista pracuj\u0105cy od wielu lat w zawodzie",
         "created": "2020-03-20T09:39:56.721Z",
         "categories": [
-            "P\u0142yn do dezynfekcji",
-            "Roznoszenie"
+            "Choroby serca",
+            "Zaka\u017cenia",
+            "\u015amiertelno\u015b\u0107"
         ]
     }
 },
@@ -175,14 +184,14 @@
         "user": [
             "lekarz3"
         ],
-        "last_updated": "2020-03-20T18:20:15.367Z",
-        "profile_pic": "https://i.picsum.photos/id/171/200/200.jpg",
-        "about": "Lubie szpital, roznoszenie i powik\u0142ania",
+        "last_updated": "2020-03-21T23:16:06.516Z",
+        "profile_pic": "https://img.icons8.com/windows/32/000000/cartoon-boy.png",
+        "about": "Student medycyny 3. roku",
         "created": "2020-03-20T09:40:54.872Z",
         "categories": [
-            "Powik\u0142ania",
-            "Roznoszenie",
-            "Szpital"
+            "Praca",
+            "Profilaktyka",
+            "Transport"
         ]
     }
 },
@@ -193,7 +202,7 @@
         "user": [
             "redaktor1"
         ],
-        "phone_number": "213 769 420",
+        "phone_number": "796 002 068",
         "created": "2020-03-20T09:56:47.638Z"
     }
 },
@@ -204,7 +213,7 @@
         "user": [
             "redaktor2"
         ],
-        "phone_number": "213 769 420",
+        "phone_number": "223 686 723",
         "created": "2020-03-20T09:56:57.450Z"
     }
 },
@@ -215,312 +224,477 @@
         "user": [
             "redaktor3"
         ],
-        "phone_number": "213 769 420",
+        "phone_number": "374 584 230",
         "created": "2020-03-20T09:57:07.508Z"
     }
 },
 {
     "model": "fakechecker.questioncollection",
-    "pk": 1,
+    "pk": 3,
     "fields": {
-        "redactor": 2,
-        "name": "\u015amier\u0107",
-        "created": "2020-03-20T10:11:43.695Z",
+        "redactor": 1,
+        "name": "Zachorowania",
+        "created": "2020-03-22T00:15:00.733Z",
         "questions_from_user": [
-            2,
-            3
+            17,
+            18,
+            19,
+            20
         ]
     }
 },
 {
     "model": "fakechecker.questioncollection",
-    "pk": 2,
+    "pk": 4,
     "fields": {
-        "redactor": 1,
-        "name": "Alkohol",
-        "created": "2020-03-20T10:11:53.589Z",
+        "redactor": 2,
+        "name": "Profilaktyka",
+        "created": "2020-03-22T00:15:27.430Z",
         "questions_from_user": [
-            4,
-            5
+            18,
+            19
         ]
     }
 },
 {
-    "model": "fakechecker.review",
-    "pk": 1,
-    "fields": {
-        "question_for_expert": 6,
-        "expert": 1,
-        "last_updated": "2020-03-20T10:08:33.480Z",
-        "justification": "Tak, oczywi\u015bcie",
-        "is_info_fake": false,
-        "created": "2020-03-20T10:08:33.480Z",
-        "sources": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    }
-},
-{
-    "model": "fakechecker.review",
-    "pk": 2,
-    "fields": {
-        "question_for_expert": 6,
-        "expert": 3,
-        "last_updated": "2020-03-20T10:08:58.194Z",
-        "justification": "Jasne, ze tak",
-        "is_info_fake": false,
-        "created": "2020-03-20T10:08:58.194Z",
-        "sources": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    }
-},
-{
-    "model": "fakechecker.review",
-    "pk": 3,
-    "fields": {
-        "question_for_expert": 8,
-        "expert": 2,
-        "last_updated": "2020-03-21T10:11:59.673Z",
-        "justification": "tak",
-        "is_info_fake": false,
-        "created": "2020-03-20T10:10:07.609Z",
-        "sources": "https://www.youtube.com/watch?v=L_jWHffIx5E"
-    }
-},
-{
-    "model": "fakechecker.review",
-    "pk": 4,
-    "fields": {
-        "question_for_expert": 7,
-        "expert": 1,
-        "last_updated": "2020-03-20T10:10:57.703Z",
-        "justification": "Nie, koty good",
-        "is_info_fake": true,
-        "created": "2020-03-20T10:10:57.703Z",
-        "sources": "https://www.youtube.com/watch?v=0mYBSayCsH0"
-    }
-},
-{
-    "model": "fakechecker.category",
-    "pk": "Objawy",
-    "fields": {
-        "fa_icon_class": null
-    }
-},
-{
-    "model": "fakechecker.category",
-    "pk": "Powik\u0142ania",
-    "fields": {
-        "fa_icon_class": null
-    }
-},
-{
-    "model": "fakechecker.category",
-    "pk": "P\u0142yn do dezynfekcji",
-    "fields": {
-        "fa_icon_class": null
-    }
-},
-{
-    "model": "fakechecker.category",
-    "pk": "Roznoszenie",
-    "fields": {
-        "fa_icon_class": null
-    }
-},
-{
-    "model": "fakechecker.category",
-    "pk": "Skutki uboczne",
-    "fields": {
-        "fa_icon_class": null
-    }
-},
-{
-    "model": "fakechecker.category",
-    "pk": "Szpital",
-    "fields": {
-        "fa_icon_class": null
-    }
-},
-{
-    "model": "fakechecker.question",
-    "pk": 1,
-    "fields": {
-        "title": "Czy koty przenosz\u0105 Koronawirusa?",
-        "content": "Czy zwierz\u0119 domowe mo\u017ce przenie\u015b\u0107 chorob\u0119? Czy po spacerze zdezynfekowa\u0107 pupilowi \u0142apy? W programie \"Koronawirus. Raport\" w TVN24 specjali\u015bci odpowiadali na wasze pytania dotycz\u0105ce koronawirusa. W poniedzia\u0142ek go\u015bciem by\u0142a publicystka i lekarka weterynarii Dorota Sumi\u0144ska.",
-        "created": "2020-03-20T09:46:15.939Z",
-        "sources": "https://tvn24.pl/polska/epidemia-koronawirusa-czy-pies-moze-przenosic-koronawirusa-4358136",
-        "categories": [
-            "Roznoszenie"
-        ]
-    }
-},
-{
-    "model": "fakechecker.question",
-    "pk": 2,
-    "fields": {
-        "title": "Czy umr\u0119 na Koronawirusa?",
-        "content": "Ministerstwo Zdrowia we wtorek rano poinformowa\u0142o o kolejnych przypadkach zaka\u017cenia koronawirusem w Polsce. W sumie w naszym kraju potwierdzono ich 205. Pi\u0119\u0107 os\u00f3b zmar\u0142o",
-        "created": "2020-03-20T09:47:33.682Z",
-        "sources": "https://tvn24.pl/polska/epidemia-koronawirusa-czy-pies-moze-przenosic-koronawirusa-4358136",
-        "categories": [
-            "Powik\u0142ania",
-            "Skutki uboczne"
-        ]
-    }
-},
-{
-    "model": "fakechecker.question",
-    "pk": 3,
-    "fields": {
-        "title": "Czy Koronawirus zabija tylko osoby starsze?",
-        "content": "Pierwszy potwierdzony przypadek zaka\u017cenia koronawirusem (2019-nCoV) w Polsce w dniu 4 marca 2020.\r\nDo 19 marca 2020 roku odnotowano 213 254 potwierdzone przypadki zachorowania na COVID-19 (zaka\u017cenie koronawirusem 2019-nCoV). 8 843 os\u00f3b zmar\u0142o. Wirus z Azji dotar\u0142 do Europy, a tak\u017ce do Ameryki P\u00f3\u0142nocnej, Ameryki Po\u0142udniowej, Australii i Afryki.",
-        "created": "2020-03-20T09:51:17.885Z",
-        "sources": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        "categories": [
-            "Powik\u0142ania",
-            "Skutki uboczne"
-        ]
-    }
-},
-{
-    "model": "fakechecker.question",
-    "pk": 4,
-    "fields": {
-        "title": "Czy kupie w sklepie p\u0142yn do dezynfekcji",
-        "content": "KGHM idzie w \u015blady Orlenu i b\u0119dzie produkowa\u0142 p\u0142yn do dezynfekcji r\u0105k, potrzebne w dobie koronawirusa w Polsce. W tym celu przestawiono produkcj\u0119 w jednym z zak\u0142ad\u00f3w.",
-        "created": "2020-03-20T09:54:25.147Z",
-        "sources": "https://www.youtube.com/watch?v=snQdTuMOFng",
-        "categories": [
-            "P\u0142yn do dezynfekcji",
-            "Roznoszenie"
-        ]
-    }
-},
-{
-    "model": "fakechecker.question",
+    "model": "fakechecker.questioncollection",
     "pk": 5,
     "fields": {
-        "title": "Czy alkohol chroni przed Koronawirusem",
-        "content": "\"P\u0142yn do dezynfekcji r\u0105k wyprodukuje sp\u00f3\u0142ka Nitroerg nale\u017c\u0105ca do naszej Grupy Kapita\u0142owej. Za produkcj\u0119 maseczek odpowiada inna z naszych sp\u00f3\u0142ek - Zanam. Musimy dzia\u0142a\u0107 elastycznie i szybko reagowa\u0107 na potrzeby spo\u0142eczne\" - poinformowa\u0142 Marcin Chludzi\u0144ski, Prezes Zarz\u0105du KGHM Polska Mied\u017a S.A.",
-        "created": "2020-03-20T09:55:56.601Z",
-        "sources": "https://www.youtube.com/watch?v=fX6J1usD4no",
-        "categories": [
-            "P\u0142yn do dezynfekcji",
-            "Roznoszenie",
-            "Szpital"
+        "redactor": 3,
+        "name": "Praca",
+        "created": "2020-03-22T00:15:49.223Z",
+        "questions_from_user": [
+            17,
+            20
         ]
     }
 },
 {
-    "model": "fakechecker.question",
+    "model": "fakechecker.review",
     "pk": 6,
     "fields": {
-        "title": "Czy mo\u017cna umrze\u0107 z powodu Koronawirusa?",
-        "content": "Koronawirus bardzo gro\u017any jest",
-        "created": "2020-03-20T09:58:40.320Z",
-        "sources": "https://www.youtube.com/watch?v=fX6J1usD4no",
-        "categories": [
-            "P\u0142yn do dezynfekcji",
-            "Roznoszenie",
-            "Szpital"
-        ]
+        "question_for_expert": 21,
+        "expert": 1,
+        "last_updated": "2020-03-22T00:05:13.436Z",
+        "justification": "Tak, osoby z chorobami s\u0105 w grupie ryzyka i stanowi\u0105 du\u017ca cz\u0119\u015b\u0107 os\u00f3b zmar\u0142ych",
+        "is_info_fake": false,
+        "created": "2020-03-22T00:05:13.436Z",
+        "sources": "https://www.gov.pl/web/koronawirus/"
     }
 },
 {
-    "model": "fakechecker.question",
+    "model": "fakechecker.review",
     "pk": 7,
     "fields": {
-        "title": "Czy Koronawirus jest roznoszony przez koty?",
-        "content": "miua, miau, miau,miua, miau, miau,miua, miau, miau",
-        "created": "2020-03-20T10:02:20.859Z",
-        "sources": "https://www.youtube.com/watch?v=wzuTJA5oh_c",
-        "categories": [
-            "Objawy",
-            "Powik\u0142ania"
-        ]
+        "question_for_expert": 21,
+        "expert": 2,
+        "last_updated": "2020-03-22T00:05:37.510Z",
+        "justification": "Tak, stanowi\u0105 one du\u017cy procent os\u00f3b zmar\u0142ych",
+        "is_info_fake": false,
+        "created": "2020-03-22T00:05:37.510Z",
+        "sources": "https://www.gov.pl/web/koronawirus/"
     }
 },
 {
-    "model": "fakechecker.question",
+    "model": "fakechecker.review",
     "pk": 8,
     "fields": {
-        "title": "Czy osoby bez objaw\u00f3w roznosz\u0105 Koronawirusa?",
-        "content": "Jest to wirus RNA os\u0142oni\u0119ty b\u0142on\u0105 t\u0142uszczow\u0105 (lipidow\u0105). Dzi\u0119ki takiej budowie mo\u017cna mu zapobiega\u0107 przez zastosowanie \u015brodk\u00f3w chemicznych, takich jak zwyk\u0142e myd\u0142o, alkohol min. 60-70%, preparaty do dezynfekcji i inne wirusob\u00f3jcze.",
-        "created": "2020-03-20T10:07:23.069Z",
-        "sources": "https://www.youtube.com/watch?v=I0pCMnXF8C8",
+        "question_for_expert": 22,
+        "expert": 1,
+        "last_updated": "2020-03-22T00:06:05.596Z",
+        "justification": "Tak, jest to prawdopodobne, dlatego nale\u017cy dba\u0107 o mycie r\u0105k",
+        "is_info_fake": false,
+        "created": "2020-03-22T00:06:05.596Z",
+        "sources": "https://www.gov.pl/web/koronawirus/"
+    }
+},
+{
+    "model": "fakechecker.review",
+    "pk": 9,
+    "fields": {
+        "question_for_expert": 23,
+        "expert": 2,
+        "last_updated": "2020-03-22T00:08:02.940Z",
+        "justification": "Nie, mimo, \u017ce jest to wirus od zwierz\u0119cy, to nie jest on roznoszony przez zwierz\u0119ta domowe",
+        "is_info_fake": true,
+        "created": "2020-03-22T00:08:02.940Z",
+        "sources": "https://www.gov.pl/web/koronawirus/"
+    }
+},
+{
+    "model": "fakechecker.review",
+    "pk": 10,
+    "fields": {
+        "question_for_expert": 26,
+        "expert": 1,
+        "last_updated": "2020-03-22T00:08:43.453Z",
+        "justification": "Nie, poniewa\u017c kaszel jest objawem wielu chor\u00f3b nie tylko Koronawirusa",
+        "is_info_fake": true,
+        "created": "2020-03-22T00:08:43.453Z",
+        "sources": "https://www.gov.pl/web/koronawirus/"
+    }
+},
+{
+    "model": "fakechecker.review",
+    "pk": 11,
+    "fields": {
+        "question_for_expert": 24,
+        "expert": 3,
+        "last_updated": "2020-03-22T00:10:12.176Z",
+        "justification": "Maseczki nie s\u0105 skuteczne przeciwko Koronawirusowi. Maseczki powinny nosi\u0107 osoby chore a nie zdrowe",
+        "is_info_fake": true,
+        "created": "2020-03-22T00:10:12.176Z",
+        "sources": "https://www.gov.pl/web/koronawirus/"
+    }
+},
+{
+    "model": "fakechecker.review",
+    "pk": 12,
+    "fields": {
+        "question_for_expert": 25,
+        "expert": 2,
+        "last_updated": "2020-03-22T00:11:22.880Z",
+        "justification": "Nie, poniewa\u017c antybiotyki dzia\u0142aj\u0105 przeciwo bakteriom a nie wirusom",
+        "is_info_fake": true,
+        "created": "2020-03-22T00:11:12.776Z",
+        "sources": "https://www.gov.pl/web/koronawirus/"
+    }
+},
+{
+    "model": "fakechecker.review",
+    "pk": 13,
+    "fields": {
+        "question_for_expert": 26,
+        "expert": 2,
+        "last_updated": "2020-03-22T00:13:02.090Z",
+        "justification": "Nie, ale w przypadku kolejnych obiaw\u00f3w podobnych do objaw\u00f3w wywo\u0142ywanych Koronawirusem nale\u017cy skontaktowa\u0107 si\u0119 z sanepidem",
+        "is_info_fake": true,
+        "created": "2020-03-22T00:12:54.946Z",
+        "sources": "https://www.gov.pl/web/koronawirus/"
+    }
+},
+{
+    "model": "fakechecker.review",
+    "pk": 14,
+    "fields": {
+        "question_for_expert": 27,
+        "expert": 1,
+        "last_updated": "2020-03-22T00:19:24.287Z",
+        "justification": "Nie, ale s\u0105 podstawy do tego,  \u017ce osoby leczone Ibuprofenem ci\u0119\u017cej przechodz\u0105 infekcj\u0119",
+        "is_info_fake": true,
+        "created": "2020-03-22T00:19:24.287Z",
+        "sources": "https://www.gov.pl/web/koronawirus/"
+    }
+},
+{
+    "model": "fakechecker.review",
+    "pk": 15,
+    "fields": {
+        "question_for_expert": 27,
+        "expert": 2,
+        "last_updated": "2020-03-22T00:20:22.614Z",
+        "justification": "Nie, ale jest niezalecany gdy\u017c s\u0105 podejrzenia, \u017ce osoby go za\u017cywaj\u0105ce ci\u0119\u017cej przechodz\u0105 chorob\u0119",
+        "is_info_fake": true,
+        "created": "2020-03-22T00:20:22.614Z",
+        "sources": "https://www.gov.pl/web/koronawirus/"
+    }
+},
+{
+    "model": "fakechecker.review",
+    "pk": 16,
+    "fields": {
+        "question_for_expert": 27,
+        "expert": 3,
+        "last_updated": "2020-03-22T00:21:28.495Z",
+        "justification": "Tak, ale w szczeg\u00f3lnych przypadkach poniewa\u017c osoby takie mog\u0105 przechodzi\u0107 ci\u0119\u017cej chorob\u0119 co mo\u017ce by\u0107 jedym z czynnik\u00f3w decyduj\u0105cych o ich \u017cyciu",
+        "is_info_fake": false,
+        "created": "2020-03-22T00:21:28.495Z",
+        "sources": "https://www.gov.pl/web/koronawirus/"
+    }
+},
+{
+    "model": "fakechecker.category",
+    "pk": "Choroby serca",
+    "fields": {
+        "fa_icon_class": "fas fa-heartbeat"
+    }
+},
+{
+    "model": "fakechecker.category",
+    "pk": "Praca",
+    "fields": {
+        "fa_icon_class": "fas fa-briefcase"
+    }
+},
+{
+    "model": "fakechecker.category",
+    "pk": "Profilaktyka",
+    "fields": {
+        "fa_icon_class": "fas fa-stethoscope"
+    }
+},
+{
+    "model": "fakechecker.category",
+    "pk": "Transport",
+    "fields": {
+        "fa_icon_class": "fas fa-bus"
+    }
+},
+{
+    "model": "fakechecker.category",
+    "pk": "Zaka\u017cenia",
+    "fields": {
+        "fa_icon_class": "fas fa-users"
+    }
+},
+{
+    "model": "fakechecker.category",
+    "pk": "\u015amiertelno\u015b\u0107",
+    "fields": {
+        "fa_icon_class": "fas fa-skull-crossbones"
+    }
+},
+{
+    "model": "fakechecker.question",
+    "pk": 15,
+    "fields": {
+        "title": "Czy posiadanie chor\u00f3b serca zwi\u0119ksza ryzyko \u015bmierci?",
+        "content": "Jestem osob\u0105 posiadaj\u0105c\u0105 chorob\u0119 serca. Czy zwi\u0119ksza to ryzyko \u015bmierci w przypadku zaka\u017cenia koronawirusem?",
+        "created": "2020-03-21T23:23:01.182Z",
+        "sources": "https://www.politykazdrowotna.com/55877,serce-a-koronawirus",
         "categories": [
-            "Powik\u0142ania",
-            "Roznoszenie",
-            "Szpital"
+            "Choroby serca",
+            "\u015amiertelno\u015b\u0107"
         ]
     }
 },
 {
     "model": "fakechecker.question",
-    "pk": 9,
+    "pk": 16,
     "fields": {
-        "title": "Czy moge mie\u0107 kota",
-        "content": "Bardzo lubie koty",
-        "created": "2020-03-20T13:43:17.210Z",
-        "sources": "https://www.facebook.com/",
+        "title": "Czy mo\u017cna zarazi\u0107 si\u0119 Koronawirusem od psa?",
+        "content": "S\u0142ysza\u0142em \u017ce mo\u017cna si\u0119 zarazi\u0107 Koronawirusem od psa. Czy to prawda?",
+        "created": "2020-03-21T23:30:46.723Z",
+        "sources": "https://wamiz.pl/pies/porady/19796/koronawirus-u-psow-jak-moge-ochronic-swoje-zwierze-czy-mozna-sie-zarazic-koronawirusem-od-psa",
         "categories": [
-            "Objawy",
-            "Powik\u0142ania",
-            "P\u0142yn do dezynfekcji"
+            "Zaka\u017cenia"
+        ]
+    }
+},
+{
+    "model": "fakechecker.question",
+    "pk": 17,
+    "fields": {
+        "title": "Czy mog\u0119 si\u0119 zarazi\u0107 Koronawirusem od pracownika?",
+        "content": "Czy mog\u0119 si\u0119 zarazi\u0107 Koronawirusem od przypadkowej osoby w pracy?",
+        "created": "2020-03-21T23:37:19.003Z",
+        "sources": "https://www.gov.pl/web/koronawirus\r\nhttps://zdrowie.wprost.pl/koronawirus/10308404/koronawirus-w-polsce-ministerstwo-zdrowia-13-nowych-przypadkow.html",
+        "categories": [
+            "Praca",
+            "Zaka\u017cenia"
+        ]
+    }
+},
+{
+    "model": "fakechecker.question",
+    "pk": 18,
+    "fields": {
+        "title": "Czy maseczki dzia\u0142aj\u0105 przeciwko Koronawirusowi",
+        "content": "Czy noszenie maseczki uchroni mnie przed Koronawirusem?",
+        "created": "2020-03-21T23:38:35.738Z",
+        "sources": "https://pulsmedycyny.pl/who-same-maseczki-nie-wystarcza-do-ochrony-przed-koronawirusem-984624",
+        "categories": [
+            "Profilaktyka"
+        ]
+    }
+},
+{
+    "model": "fakechecker.question",
+    "pk": 19,
+    "fields": {
+        "title": "Czy mycie r\u0105k jest skuteczn\u0105 metod\u0105 zapobiegania Koronawirusowi?",
+        "content": "Czy mycie r\u0105k jest skuteczne przeciwko zara\u017ceniu Koronawirusem?",
+        "created": "2020-03-21T23:41:08.203Z",
+        "sources": "https://zdrowie.wprost.pl/medycyna/10306155/co-moze-sie-zdarzyc-jesli-nie-bedziesz-myc-rak-mowa-nie-tylko-o-koronawirusie.html",
+        "categories": [
+            "Profilaktyka",
+            "Zaka\u017cenia"
+        ]
+    }
+},
+{
+    "model": "fakechecker.question",
+    "pk": 20,
+    "fields": {
+        "title": "Czy mog\u0119 si\u0119 zarazi\u0107 Koronawirusem po je\u017adzie autobusem?",
+        "content": "Czy jad\u0105c autobusem kt\u00f3rym jecha\u0142a osoba chora mog\u0119 z\u0142apa\u0107 Koronawirusa?",
+        "created": "2020-03-21T23:45:00.526Z",
+        "sources": "https://tvn24.pl/wroclaw/koronawirus-w-polsce-kierowca-pks-jelenia-gora-zakazony-wczesniej-wozil-pasazerow-4375265",
+        "categories": [
+            "Transport",
+            "Zaka\u017cenia"
+        ]
+    }
+},
+{
+    "model": "fakechecker.question",
+    "pk": 21,
+    "fields": {
+        "title": "Czy zara\u017cenie Koronawirusem jest niebezpieczne dla os\u00f3b z chorob\u0105 serca?",
+        "content": "Cz\u0119sto wspomina si\u0119 o zagro\u017ceniu Koronawirusem dla os\u00f3b z chorobami serca. Czy jest to prawdziwe i uzasadnione stanowisko?",
+        "created": "2020-03-21T23:47:10.407Z",
+        "sources": "https://www.politykazdrowotna.com/55877,serce-a-koronawirus",
+        "categories": [
+            "Choroby serca",
+            "\u015amiertelno\u015b\u0107"
+        ]
+    }
+},
+{
+    "model": "fakechecker.question",
+    "pk": 22,
+    "fields": {
+        "title": "Czy mo\u017cna zosta\u0107 zaka\u017conym Koronawirusem od przypadkowo spotkanej osoby?",
+        "content": "Codziennie spotykamy wiele przypadkowych os\u00f3b. Czy mo\u017cliwe jest zara\u017cenie od takiej osoby Koronawirusem?",
+        "created": "2020-03-21T23:49:31.422Z",
+        "sources": "https://tvn24.pl/wroclaw/koronawirus-w-polsce-kierowca-pks-jelenia-gora-zakazony-wczesniej-wozil-pasazerow-4375265\r\nhttps://www.gov.pl/web/koronawirus\r\nhttps://zdrowie.wprost.pl/koronawirus/10308404/koronawirus-w-polsce-ministerstwo-zdrowia-13-nowych-przypadkow.html",
+        "categories": [
+            "Praca",
+            "Transport",
+            "Zaka\u017cenia"
+        ]
+    }
+},
+{
+    "model": "fakechecker.question",
+    "pk": 23,
+    "fields": {
+        "title": "Czy mo\u017cna zosta\u0107 zaka\u017conym Koronawirusem od zwierz\u0119cia domowego?",
+        "content": "Koronawirus to wirus od zwierz\u0119cy. Czy wi\u0119c z tego powodu mo\u017ce by\u0107 przenoszony r\u00f3wnie\u017c przez zwierz\u0119ta domowe takie jak psy czy koty?",
+        "created": "2020-03-21T23:51:12.382Z",
+        "sources": "https://wamiz.pl/pies/porady/19796/koronawirus-u-psow-jak-moge-ochronic-swoje-zwierze-czy-mozna-sie-zarazic-koronawirusem-od-psa",
+        "categories": [
+            "Profilaktyka",
+            "Zaka\u017cenia"
+        ]
+    }
+},
+{
+    "model": "fakechecker.question",
+    "pk": 24,
+    "fields": {
+        "title": "Czy maseczki chroni\u0105 przed Koronawirusem?",
+        "content": "Ludzie w bardzo du\u017cej ilo\u015bci wykupuj\u0105 maseczki. Czy chroni\u0105 one przed Koronawirusem?",
+        "created": "2020-03-21T23:53:48.932Z",
+        "sources": "https://pulsmedycyny.pl/who-same-maseczki-nie-wystarcza-do-ochrony-przed-koronawirusem-984624",
+        "categories": [
+            "Profilaktyka",
+            "Zaka\u017cenia"
+        ]
+    }
+},
+{
+    "model": "fakechecker.question",
+    "pk": 25,
+    "fields": {
+        "title": "Czy antybiotyki s\u0105 skuteczne w zapobieganiu Koronawirusowi?",
+        "content": "Wiele chor\u00f3b leczy si\u0119 antybiotykami. Czy mo\u017cna w ten spos\u00f3b wyleczy\u0107 Koronawirusa",
+        "created": "2020-03-22T00:00:17.957Z",
+        "sources": "https://zdrowie.wprost.pl/koronawirus/10306771/antybiotykami-nie-leczy-sie-infekcji-wirusowych.html",
+        "categories": [
+            "Profilaktyka",
+            "\u015amiertelno\u015b\u0107"
+        ]
+    }
+},
+{
+    "model": "fakechecker.question",
+    "pk": 26,
+    "fields": {
+        "title": "Czy kaszel to ju\u017c pow\u00f3d do niepokoju?",
+        "content": "Cz\u0119sto wspomina si\u0119 o kaszlu w konkek\u015bci koronawirusa. Czy sam kaszel jest powodem do niepokoju?",
+        "created": "2020-03-22T00:03:47.627Z",
+        "sources": "https://www.gov.pl/web/koronawirus/porady",
+        "categories": [
+            "Zaka\u017cenia"
+        ]
+    }
+},
+{
+    "model": "fakechecker.question",
+    "pk": 27,
+    "fields": {
+        "title": "Czy Ibuprofen prowadzi do \u015bmierci podczas infekcji Koronawirusa?",
+        "content": "WHO nie zaleca Ibuprofenu podczas leczenia Koronawirusa. Czy branie go mo\u017ce doprowadzi\u0107 do \u015bmierci?",
+        "created": "2020-03-22T00:17:59.720Z",
+        "sources": "https://www.gov.pl/web/koronawirus/",
+        "categories": [
+            "Zaka\u017cenia",
+            "\u015amiertelno\u015b\u0107"
         ]
     }
 },
 {
     "model": "fakechecker.questionfromuser",
-    "pk": 1,
+    "pk": 15,
     "fields": {
         "is_read": false
     }
 },
 {
     "model": "fakechecker.questionfromuser",
-    "pk": 2,
+    "pk": 16,
+    "fields": {
+        "is_read": false
+    }
+},
+{
+    "model": "fakechecker.questionfromuser",
+    "pk": 17,
     "fields": {
         "is_read": true
     }
 },
 {
     "model": "fakechecker.questionfromuser",
-    "pk": 3,
+    "pk": 18,
     "fields": {
         "is_read": false
     }
 },
 {
     "model": "fakechecker.questionfromuser",
-    "pk": 4,
+    "pk": 19,
+    "fields": {
+        "is_read": false
+    }
+},
+{
+    "model": "fakechecker.questionfromuser",
+    "pk": 20,
     "fields": {
         "is_read": true
-    }
-},
-{
-    "model": "fakechecker.questionfromuser",
-    "pk": 5,
-    "fields": {
-        "is_read": false
-    }
-},
-{
-    "model": "fakechecker.questionfromuser",
-    "pk": 9,
-    "fields": {
-        "is_read": false
     }
 },
 {
     "model": "fakechecker.questionforexpert",
-    "pk": 6,
+    "pk": 21,
     "fields": {
-        "views": 2,
+        "views": 0,
         "redactor": 1
     }
 },
 {
     "model": "fakechecker.questionforexpert",
-    "pk": 7,
+    "pk": 22,
+    "fields": {
+        "views": 0,
+        "redactor": 1
+    }
+},
+{
+    "model": "fakechecker.questionforexpert",
+    "pk": 23,
     "fields": {
         "views": 0,
         "redactor": 2
@@ -528,10 +702,34 @@
 },
 {
     "model": "fakechecker.questionforexpert",
-    "pk": 8,
+    "pk": 24,
+    "fields": {
+        "views": 0,
+        "redactor": 3
+    }
+},
+{
+    "model": "fakechecker.questionforexpert",
+    "pk": 25,
+    "fields": {
+        "views": 0,
+        "redactor": 3
+    }
+},
+{
+    "model": "fakechecker.questionforexpert",
+    "pk": 26,
+    "fields": {
+        "views": 0,
+        "redactor": 1
+    }
+},
+{
+    "model": "fakechecker.questionforexpert",
+    "pk": 27,
     "fields": {
         "views": 1,
-        "redactor": 1
+        "redactor": 2
     }
 }
 ]

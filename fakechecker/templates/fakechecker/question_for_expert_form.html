@@ -3,18 +3,12 @@
 {% load crispy_forms_filters %}
 {% block content %}
 
-<p>
-    <a class="btn btn-light" href="{% url 'QuestionForExpert_list' %}">
-    QuestionForExpert Listing
-    </a>
-</p>
-
 <form method="post">
     {% csrf_token %}
     <div class="container">
-        <h3>Nowe pytanie do eksperta</h3>
+        <h2 class="text-center">Nowe pytanie do eksperta</h2>
         {{ question_for_expert_form|crispy }}
-        <input type="submit" value="Save" class="btn btn-outline-dark">
+        <input type="submit" value="Wyślij" class="btn btn-outline-dark">
     </div>
 </form>
 

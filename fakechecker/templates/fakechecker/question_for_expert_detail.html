@@ -11,7 +11,9 @@
         <p class="text-muted text-center">{{ object.created|date }}</p>
         <div class="authenticity-bar row text-center">
             <div class="offset-2 col-8 col-md-10 offset-md-1 mt-3">
-                <h3><span class="text-success">{{ object.get_real_percentage }}% expertów potwierdza</span> | <span class="text-danger">{{ object.get_fake_percentage }}% expertów zaprzecza</span></h3>
+                {% if object.get_fake_number > 0 or object.get_real_number > 0 %}
+                    <h3><span class="text-danger">{{ object.get_fake_percentage }}% expertów zaprzecza</span> | <span class="text-success">{{ object.get_real_percentage }}% expertów potwierdza</span></h3>
+                {% endif %}
                 <div class="progress {% if object.review_set.count > 0 %}bg-success{% endif %} p-0">
                     <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="{{ object.get_fake_percentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ object.get_fake_percentage }}%"></div>
                 </div>

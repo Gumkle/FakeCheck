@@ -2,15 +2,22 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    
-<div class="row">
-  <label class="col-sm-12"><strong>Nazwa:</strong></label>
-  <p class="col-sm-12">{{object.name}}</p>
-  <label class="col-sm-12"><strong>Utworzone:</strong></label>
-  <p class="col-sm-12">{{object.created}}</p>
-</div>
+<div class="container">
+<div class="mt-3 mb-3">
+        <a href="{{request.META.HTTP_REFERER}}" class="btn btn-outline-dark pl-3 pr-3">Powrót</a>
+    </div>
+<div class="card p-3 mb-3">
+        <div class="expert-description">
+            <div class="p-2 float-left">
+                <h3>Nazwa: {{object.name}}</h3>
+                <p class="text-muted">
+                    Utworzono: {{ object.created|date }}
+                </p>
+            </div>
+        </div>
+    </div>
 {% if object.questions_from_user.all%}
-    <p>Pytania:</p><br>
+    <h3>Pytania:</h3><br>
     {% for question in object.questions_from_user.all%}
         <div class="border hover-dark p-3 m-1 row">
             <div class="col-12 col-md-8">
@@ -34,5 +41,5 @@
         </div>
     {% endfor%}
 {% endif %}
-
+</div>
 {% endblock %}

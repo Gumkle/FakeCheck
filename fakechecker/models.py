@@ -74,6 +74,9 @@ class QuestionCollection(models.Model):
         return reverse("QuestionCollection_update", args=(self.pk,))
 
 
+BOOL_CHOICES = ((True, 'Tak'), (False, 'Nie'))
+
+
 class Review(models.Model):
     # Relationships
     question_for_expert = models.ForeignKey("fakechecker.QuestionForExpert", on_delete=models.CASCADE)
@@ -82,11 +85,11 @@ class Review(models.Model):
     # Fields
     last_updated = models.DateTimeField(auto_now=True, editable=False)
     justification = models.TextField()
-    is_info_fake = models.BooleanField()
+    is_info_fake = models.BooleanField(choices=BOOL_CHOICES, default=False)
     created = models.DateTimeField(auto_now_add=True, editable=False)
     sources = models.TextField()
 
-    DELIMITER = ","
+    DELIMITER = "\n"
 
     class Meta:
         pass
@@ -96,6 +99,9 @@ class Review(models.Model):
 
     def __str__(self):
         return str(self.pk)
+
+    def get_absolute_url(self):
+        return reverse("QuestionForExpert_detail", args=(self.question_for_expert.id,))
 
     def get_update_url(self):
         return reverse("Review_update", args=(self.pk,))
@@ -133,7 +139,7 @@ class Question(models.Model):
     sources = models.TextField(blank=True)
 
     # Constant
-    DELIMITER = ","
+    DELIMITER = "\n"
 
     class Meta:
         pass
